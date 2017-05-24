@@ -1,0 +1,258 @@
+#map {
+	$map-height: 480px;
+
+	height: $map-height;
+	max-height: 100%;
+
+	// Hide if no-js
+	html.no-js & {
+		height: auto;
+		&::before {
+			content: "The map does not work without JavaScript";
+			display: block;
+			text-align: center;
+			color: red;
+			
+		}
+	}
+	html.no-js[lang="ru"] &::before {
+		content: "Карта не работает без JavaScript";
+	}
+
+	//
+	.leaflet-default-icon-path {
+		background-image: url("/images/marker-icon.png");
+	}
+
+	//clusters
+
+	.marker-cluster-small {
+		background-color: rgba($medium-gray, 0.6);
+		div {
+			background-color: rgba($medium-gray, 1);
+			color: $white;
+		}
+	}
+
+	.marker-cluster-medium {
+		background-color: rgba($dark-gray, 0.6);
+		div{
+			background-color: rgba($dark-gray, 1);
+			color: $white;
+		}
+	}
+
+	.leaflet-popup-content {
+		text-align: center;
+		h5 {
+			margin-bottom: 0;
+		}
+		a[data-project] {
+			margin: 4px 0;
+			display: inline-block;
+		}
+	}
+
+	.navcontrol {
+		width: 230px;
+		height: $map-height;
+		background-color: rgba($medium-gray,.8);
+		position: absolute;
+		z-index: 1000;
+		right: -230px;
+		top: 0;
+		transition: right 0.3s cubic-bezier(0.175, 0.885, 0.32, 1);
+		margin: 0;
+
+		html.no-js & {
+			display: none;
+		}
+
+		&.open {
+			right: 0;
+		}
+
+		& > .btn {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			left: -30px;
+			background-color: inherit;
+			text-align: center;
+			font-size: 24px;
+			cursor: pointer;
+			color: white;
+			line-height: 1.2;
+		}
+
+		& > .pane {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			right: -100%;
+			transition: right 0.3s;
+			overflow: hidden;
+		}
+
+		// panes open logic in css 
+
+		&[data-pane="cities"] > .cities.pane,
+		&[data-pane=""] > .cities.pane,
+		&:not([data-pane]) > .cities.pane {
+			right: 0;
+		}
+
+		&[data-pane="city"] > .city.pane {
+			right: 0;
+		}
+
+		&[data-pane="project"] > .project.pane,
+		&[data-pane="project"] > .city.pane {
+			right: 0;
+		}
+
+		// panes styles
+
+		& > .cities.pane {
+			background-color: transparent;
+			right: 0;
+
+			.filter {
+				margin: 0;
+			}
+
+			.cities {
+				overflow-y: auto;
+				padding: $global-padding 0;
+				box-sizing: box-sizing;
+				height: $map-height - 40px;
+
+				.city {
+					padding: $global-padding;
+					background-color: transparent;
+					transition: background-color 0.1s;
+					cursor: pointer;
+
+					&:hover {
+						background-color: rgba($dark-gray, 0.3);
+					}
+
+					.title {
+						font-family: $header-font-family;
+						font-size: 1.8em;
+						font-weight: 500;
+						color: white;
+					}
+
+					.location {
+						color: $white;
+						font-size: 0.8em;
+					}
+				}
+			}
+		}
+
+		& > .city.pane {
+			background-color: $light-gray;
+
+			.header {
+				padding: $global-padding/2 $global-padding;
+				border-bottom: 1px solid $medium-gray;
+				background-color: $dark-gray;
+				
+				.back {
+					cursor: pointer;
+					color: $light-gray;;
+					&:hover {
+						color: $white;
+					}
+				}
+
+				.title {
+					font-family: $header-font-family;
+					font-size: 1.8em;
+					font-weight: 500;
+					color: white;
+				}
+
+				.location {
+					font-size: 0.8em;
+					color: $white;
+				}
+			}
+
+			.projects {
+				overflow-y: auto;
+				box-sizing: box-sizing;
+				height: 340px;
+
+				.project {
+					padding: $global-padding;
+					cursor: pointer;
+
+					&:hover {
+						background-color: rgba($dark-gray, 0.3);
+					}
+
+					.title {
+						font-family: $header-font-family;
+						font-size: 1.4em;
+						font-weight: 500;
+						color: $black;
+					}
+
+					.summary {
+						color: $dark-gray;
+						font-size: 0.8em;
+					}
+				}
+			}
+		}
+
+		& > .project.pane {
+			padding: $global-padding;
+			background-color: white;
+			overflow-y: auto;
+			text-align: center;
+
+			.back {
+				cursor: pointer;
+				text-align: left;
+				color: $light-gray;
+				&:hover {
+					color: $medium-gray;
+				}
+			}
+
+			.title {
+				font-family: $header-font-family;
+				font-size: 2em;
+				font-weight: 500;
+				color: $black;
+			}
+
+			.summary {
+				color: $dark-gray;
+				font-size: 0.8em;
+			}
+
+			.logo {
+				max-width: 240px;
+				max-height: 240px;
+				margin: $global-margin 0;
+			}
+
+			.link {
+				margin: $global-margin 0;
+			}
+
+			.about {
+				text-align: justify;
+				color: $medium-gray;
+			}
+		}
+
+	}
+}

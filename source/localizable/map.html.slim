@@ -1,0 +1,62 @@
+- localize_page :map
+- MAP_DATA = map_data
+
+article
+  header.article_header.gradient
+    .row.column   
+      h1 = t(:'map.title')
+  .row.column
+    .callout
+      #map
+    .body.text-justify = t(:'map.body')
+    hr
+    .cities_with_projects
+      - data.cities.sort_by{|_,c| tr(c.title)}.each do |pair|
+        - city_name, city = pair
+        - city_projects = data.projects.values.select{|project| project.cities.include?(city_name) }
+        - next unless city_projects.any?
+        section
+          h3.title = tr city.title
+          p.location = tr city.location
+          ul
+            - city_projects.each do |project|
+              li = link_to(tr(project.title), lp("/#{project.name}"))
+
+script id="navcontrol-template" type="text/x-template"
+  .navcontrol
+    .btn ☰
+    .cities.pane
+      input.filter.form-controll type="text" placeholder="#{t :'map.filter'}"
+      .cities
+        - MAP_DATA[:cities].each do |city_name,city|
+          - next if city[:projects].empty?
+          .city data-city="#{city_name}"
+            .title = city[:title]
+            .location  = city[:location]
+    .city.pane
+      .header
+        .back = t :'map.back_to_cities'
+        .title
+        .location
+      .projects
+    .project.pane
+      .back = t :'map.back_to_projects'
+      .title
+      .summary
+      img.logo src="" alt=""
+      a.link.button.hollow.small.expanded href="" = t :'map.project_page'
+      .about
+
+/ Leafletjs
+link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin=""
+script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""
+
+/ Leafletjs clustering plugin https://github.com/Leaflet/Leaflet.markercluster
+link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.5/dist/MarkerCluster.Default.css" integrity="sha384-5kMSQJ6S4Qj5i09mtMNrWpSi8iXw230pKU76xTmrpezGnNJQzj0NzXjQLLg+jE7k" crossorigin=""
+script src="https://unpkg.com/leaflet.markercluster@1.0.5/dist/leaflet.markercluster.js" integrity="sha384-YNZ7LIaxCeROxWyLnxvDbuEggXKj4Wu5yDwhD8UD0EpB00dwFaRQ2rFaBV4wPv2W" crossorigin=""
+link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.5/dist/MarkerCluster.css" integrity="sha384-lPzjPsFQL6te2x+VxmV6q1DpRxpRk0tmnl2cpwAO5y04ESyc752tnEWPKDfl1olr" crossorigin=""
+
+/ Handlebars
+//script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"
+
+script = "window.MAP_DATA = #{MAP_DATA.to_json};";

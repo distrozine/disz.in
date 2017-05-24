@@ -1,0 +1,16 @@
+---
+title: HCL records
+about: HCL records — небольшая студия записи рок'н'ролла на окраине одного из городов
+  славной рашки. Представляет собой гараж, в котором жарко летом и холодно зимой.
+  HCL расшифровывается как HoyTsoyLetov; показавшись однажды смешным, название закрепилось
+  и звучит солидно. Занимаемся звукозаписью, организацией гаражных гигов, предоставлением
+  оборудования для гигов посерьёзней и ремонтом китайских мотоциклов.
+cities:
+- zelenograd
+links:
+- text: opgsff.org/hcl.php
+  href: https://opgsff.org/hcl.php
+- text: friends-of-no-one.sexy
+  href: http://friends-of-no-one.sexy/
+- text: void@opgsff.info
+  href: mailto:void@opgsff.info

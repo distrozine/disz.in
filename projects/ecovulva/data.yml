@@ -1,0 +1,31 @@
+title: ecovulva
+summary:
+  ru: Швейный кооператив
+  en: Sewing cooperative
+about:
+  ru: Vulva - это коллективный проект, цель которого воплотить свою любовь к шитью в красивых и практичных вещах. Мы - три девчонки - Юля, Рита и Саша, которые вкладывают часть своего собственного мироощущения и вкуса в создаваемые каждой из нас вещи. Юля любит яркие цвета и интересные изображения, в которых вы можете прочувствовать ее любовь ко всем на свете. Рита - в восторге от гор и природы в целом и это отражается практически во всем, что она шьет. А еще она веселая, поэтому яркие цвета ее сумок на пояс радуют глаз. Саша обожает растения и любит животных, поэтому на ее косметичках много растительных и животных мотивов. Все мы против всякого рода предрассудков и по возможности хотим помочь, тем кто находится рядом с нами и нуждается в этом. Мы против чрезмерного потребления, поэтому в части вещей от Vulva материалы использованы повторно. А еще всех нас объединяет любовь к путешествиям, поэтому мы стараемся шить практичные вещи, которые вы с удовольствием можете взять с собой.
+  en: Vulva is a collective project whose goal is to embody your love of sewing in beautiful and practical things. We are three girls - Julia, Rita and Sasha, who invest part of their own attitude and taste in the things created by each of us. Julia likes bright colors and interesting images, in which you can feel her love for everyone in the world. Rita is delighted with the mountains and nature in general and this is reflected in almost everything she sews. And she's gay, so the bright colors of her bags on the belt pleases the eye. Sasha loves plants and loves animals, that is why her cosmetics have many plant and animal motifs. We are all against any kind of prejudice and, if possible, we want to help those who are close to us and need it. We are against excessive consumption, so in part of things from Vulva materials are reused. And yet all of us are united by the love of travel, so we try to sew practical things that you can take with pleasure.
+history: История
+cities: [volzhskiy]
+links:
+  - href: https://vk.com/ecovulva
+    text: Ecovulva во вконтакте
+  - href: https://one_link
+    text:
+      en: One link two texts
+      ru: Одна ссылка Два текста
+  - href: https://only_href_com
+  - href:
+      ru: https://only_href_RU
+      en: https://only_href_EN
+  - text:
+      ru: Только текст RU
+      en: Only text EN
+  - href:
+      en: https://eco_shop_EN
+      ru: https://eco_shop_RU
+    text:
+      ru: Eco магаз на русском
+      en: Eco shop for english
+  - href: mailto:xtsidx@gmail.com
+    text: Тест email

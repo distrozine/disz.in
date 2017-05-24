@@ -1,0 +1,8 @@
+{
+  "name": "disz.in",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "foundation-sites": "~6.3.1"
+  }
+}

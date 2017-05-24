@@ -1,0 +1,48 @@
+doctype html
+html.no-js lang="#{::I18n.locale}" 
+  head
+    meta charset="utf-8" 
+    meta content="ie=edge" http-equiv="x-ua-compatible" 
+    meta content="width=device-width, initial-scale=1.0" name="viewport" 
+    meta name="theme-color" content="#343d46"
+    title = "#{current_resource.data.title} | DistroZine"
+    = stylesheet_link_tag "app"
+    = javascript_include_tag "modernizr"
+  body class=page_classes
+    header#mainmenu.top-bar data-toggler=".expanded"
+      .row.column
+        button.menu-icon type="button" data-toggle="mainmenu"
+        .top-bar-title
+          a href="#{url_for('/')}" == 'Dis<span>tro</span>Zin<span>e</span>'
+        .top-bar-left.hide-for-small
+          ul.menu.vertical.medium-horizontal
+            li = link_to t(:'map.menu_item'), lp('/map')
+        .top-bar-right
+          ul.menu
+            li class="#{'active' if I18n.locale == :en}"
+              = link_to 'EN', localize_path(:en, "/"+current_page.path), hreflang: 'en'
+            li class="#{'active' if I18n.locale == :ru}"
+              = link_to 'RU', localize_path(:ru, "/"+current_page.path), hreflang: 'ru'
+          
+    section
+      = yield
+
+    footer.row.column
+      ul.menu.vertical.medium-horizontal
+        li
+          a Home
+        li
+          a Blog
+        li = link_to t(:'map.menu_item'), lp('/map')
+        li = link_to t(:'about.menu_item'), lp('/about')
+        li = link_to t(:'contacts.menu_item'), lp('/contacts')
+        /li = link_to t(:'layout.source_code'), "https://github.com/distrozine/disz.in"
+      a.logo href="https://distrozine.github.io"
+      .copyright
+        |
+          © Copyright 2017 <a href="https://distrozine.github.io">DistroZine</a>
+           | License <a href="https://www.gnu.org/licenses/agpl-3.0.txt">GNU AGPLv3</a>
+           | 
+        a href="https://github.com/distrozine/disz.in" = t :'layout.source_code'
+
+    = javascript_include_tag  "app"

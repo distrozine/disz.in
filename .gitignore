@@ -1,0 +1,7 @@
+# Mac Default
+.directory
+
+# Middleman
+.sass-cache/
+build/*
+source/bower_components/*

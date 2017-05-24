@@ -1,0 +1,38 @@
+- current_page.data.title = tr project.title
+article#project
+  header.article_header
+    .row.column
+      figure.logo
+        img src="/#{project.name}/logo.png" alt="project logo"
+      h1
+      	= tr project.title
+      	br
+      	small = tr project.summary
+  .row.column
+    // ABOUT
+    .about = tr project.about
+    // PHOTOS
+    - if project.photos.any?
+      .photos.row
+        - project.photos.each do |photo|
+          .columns.small-12.medium-6.large-4
+            figure
+              .image style="background-image:url('#{photo}')" alt="Project preview photo"
+    // LINKS
+    - unless (links = project.links).blank?
+      .links
+        h2 = t :'project.links'
+        ul.menu.vertical
+          - links.each do |link|
+            - text = tr(link[:text] || link[:href])
+            - href = tr(link[:href])
+            li
+              - if href
+                = link_to(text, href, target: '_blank') 
+              - else
+                span = text 
+    // HISTORY
+    - unless (history = tr(project.history)).blank?
+      .history
+  	    h2 = t :'project.history'
+  	    = tr project.history
