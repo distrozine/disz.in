@@ -1,5 +1,5 @@
-# Mac Default
 .directory
+.idea
 
 # Middleman
 .sass-cache/
