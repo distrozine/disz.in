@@ -53,6 +53,7 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    maruku (0.7.3)
     memoist (0.15.0)
     middleman (4.1.14)
       coffee-script (~> 2.2)
@@ -147,6 +148,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  maruku
   middleman (~> 4.1.2)
   middleman-autoprefixer (~> 2.8.0)
   middleman-compass (~> 4.0.1)
@@ -158,4 +160,4 @@ DEPENDENCIES
   typescript-node
 
 BUNDLED WITH
-   1.14.6
+   1.15.1

@@ -1,7 +1,7 @@
 - localize_page :contacts
 
 article#contacts
-	header.article_header.gradient
-		.row.column		
-			h1 = t(:'contacts.title')
-	.row.column Всякоразно
+  header.article_header.gradient
+    .row.column
+      h1 = t(:'contacts.title')
+    .row.column = Maruku.new(t(:'contacts.body')).to_html

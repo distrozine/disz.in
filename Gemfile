@@ -12,3 +12,5 @@ gem "middleman-livereload", "~> 3.4.6"
 gem "mini_magick"
 
 gem "slim"
+
+gem "maruku"

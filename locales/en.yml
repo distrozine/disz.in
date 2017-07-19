@@ -1,20 +1,9 @@
 en:
   layout:
     source_code: Source code
-  about:
-    menu_item: About 
-    title: About
-  contacts:
-    menu_item: Contacts 
-    title: Contacts
-  map:
-    menu_item: Map 
-    title: Projects map
-    body: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    filter: Filter
-    back_to_cities: ⏪ Back to cities list
-    back_to_projects: ⏪ Back to projects list
-    project_page: Project page
+  blog:
+    menu_item: Blog
+    title: Blog
   project:
     links: Links
     history: History

@@ -2,8 +2,9 @@
 article#project
   header.article_header
     .row.column
-      figure.logo
-        img src="/#{project.name}/logo.png" alt="project logo"
+      - if (File.exists? "/#{project.name}/logo.png")
+        figure.logo
+          img src="/#{project.name}/logo.png" alt="project logo"
       h1
       	= tr project.title
       	br

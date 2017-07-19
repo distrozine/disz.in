@@ -1,0 +1,7 @@
+- localize_page :support
+
+article#support
+  header.article_header.gradient
+    .row.column
+      h1 = t(:'support.title')
+  .row.column = Maruku.new(t(:'support.body')).to_html

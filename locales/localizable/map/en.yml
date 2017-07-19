@@ -1,0 +1,9 @@
+en:
+  map:
+    menu_item: Map
+    title: Projects map
+    body: Use interactive geographic map to search for diy projects in the city or country of interest. Or choose the city from the list below.
+    filter: Filter
+    back_to_cities: ⏪ Back to cities list
+    back_to_projects: ⏪ Back to projects list
+    project_page: Project page
