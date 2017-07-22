@@ -7,11 +7,23 @@ module I18nHelpers
 	end
 
 	# add or change locale prefix if need
-	def localize_path(locale, path)
-	  exists_locale = path[/^\/(..)\//,1]
+	def localize_path(locale, path = current_page.path)
+	  exists_locale = path[/^?(..)\//,1]
 	  exists_locale = nil unless langs.include? exists_locale&.to_sym
 	  unlocale_path = exists_locale ? path[3..-1] : path
 	  ::I18n.default_locale == locale ? unlocale_path : "/#{locale}#{unlocale_path}"
+	end
+
+	# get locale from path
+	def locale_from_path(path = current_page.path)
+		exists_locale = path[/^?(..)\//,1]
+		exists_locale = nil unless langs.include? exists_locale&.to_sym
+		(exists_locale  ||  ::I18n.default_locale).to_sym
+	end
+
+  # cet current locale from path
+	def locale_from_path!(path = current_page.path)
+		::I18n.locale = locale_from_path(path)
 	end
 
 	# localize_path with current locale
