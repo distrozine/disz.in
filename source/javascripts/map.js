@@ -31,7 +31,7 @@
 		marker.bindPopup(popup);
 		marker.bindTooltip(this.title);
 		marker.on('popupopen', onCityMarkerPopupToggle);
-    marker.on('popupclose', onCityMarkerPopupToggle);
+    	marker.on('popupclose', onCityMarkerPopupToggle);
 		city_markers[this.name] = marker;
 	});
 	var city_markers_group = L.markerClusterGroup({});
@@ -78,7 +78,7 @@
 	 		$projects.html('');
 	 		$.each(city.projects, function (){
 	 			var p = MAP_DATA.projects[this];
-	 			$projects.append($('<div data-project="'+this+'" class="project"><div class="title">'+p.title+'</div><div class="summary">'+p.summary+'</div></div>'));
+	 			$projects.append($('<div data-project="'+this+'" class="project"><div class="title">'+p.title+'</div><div class="summary">'+(p.summary || '')+'</div></div>'));
 	 		});
 	 		$('.project[data-project]', $projects).click(function(){
 	 			$('a[data-project="'+$(this).attr('data-project')+'"]', mapEl).trigger('click');
@@ -138,6 +138,13 @@
       } else {
         cityEl.fadeOut();
       }
+	}
+  });
+
+	// open navcontrol on medium or large screens when load
+	$(document).ready(function (){
+		if (Foundation.MediaQuery.atLeast('medium')) {
+			navcontrol.open();
 		}
 	});
 
