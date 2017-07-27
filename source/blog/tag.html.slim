@@ -1,0 +1,11 @@
+---
+pageable: true
+per_page: 4
+layout: "blog_articles"
+---
+
+- locale_from_path!
+
+- current_page.data.title = t(:'blog.tags.item_title', tag: blog_tagtitle(tagname))
+
+- content_for :sidebar_prepend, blog_taginfo(tagname)

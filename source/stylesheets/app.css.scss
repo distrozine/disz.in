@@ -5,10 +5,13 @@
 @include foundation-everything;
 
 @import 'layouts/layout';
+@import 'layouts/blog_article';
 
+@import 'components/blog_article_row';
 @import 'components/article_header';
 @import 'components/map';
 @import 'components/cities_with_projects';
+@import 'components/label_tag';
 
 @import 'pages/project';
 

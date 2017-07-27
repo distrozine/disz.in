@@ -1,0 +1,10 @@
+---
+pageable: true
+layout: "blog_articles"
+---
+
+- localize_page :blog
+
+- content_for :sidebar_prepend
+  .blog_body = t(:'blog.body')
+  br

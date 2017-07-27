@@ -1,0 +1,74 @@
+// see this component http://foundation.zurb.com/building-blocks/blocks/article-row-section.html
+
+.blog_article-row-section {
+  @include flex-grid-row(null, $global-width, 12);
+  justify-content: center;
+
+  &-inner {
+    @include flex-grid-column(12);
+
+    @include breakpoint(medium) {
+      @include flex-grid-column(12);
+    }
+  }
+
+  &-header {
+    padding: 1.5rem 0;
+    margin: 0;
+    line-height: 1;
+  }
+
+}
+
+.blog_article-row {
+  display: flex;
+  line-height: 1;
+  flex-direction: column;
+  //border-top: 1px solid $light-gray;
+  padding: 1.5rem 0;
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+  }
+
+  &-img {
+
+    @include breakpoint(medium) {
+      width: 200px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-content {
+    padding: 1.5rem 0 0;
+    color: $body-font-color;
+
+    @include breakpoint(medium) {
+      padding: 0 0 0 1.5rem;
+    }
+
+    &-header {
+      font-size: 2rem;
+      color: $primary-color;
+    }
+
+    &-description {
+      text-align: justify;
+      margin-top: $global-margin;
+    }
+
+    &-author,
+    &-time {
+      font-size: 0.875rem;
+      margin-bottom: 0;
+      color: $dark-gray;
+    }
+  }
+
+}
+
+
+

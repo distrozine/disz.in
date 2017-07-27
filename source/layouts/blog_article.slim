@@ -1,0 +1,23 @@
+- article = current_article
+= wrap_layout :layout do
+  article.blog_article_layout
+    header.article_header.gradient
+      .row.column
+        h1 = current_article.title
+
+        ul.breadcrumbs.date-breadcrumbs
+          li
+            a href=(blog_year_path article.date.year) = I18n.l article.date, format: '%Y'
+          li
+            a href=(blog_month_path  article.date.year, article.date.month) = I18n.l article.date, format: '%B'
+          li
+            a href=(blog_day_path  article.date.year, article.date.month, article.date.day) = I18n.l article.date, format: '%d'
+
+    .row.column
+      - if blog_article_with_cover? article
+        figure.cover.thumbnail = blog_article_image_tag article, 'cover.jpg'
+      .article_body = article.body
+    .row.column
+      - current_article.tags.each do |tag|
+        '
+        a.label.tag.secondary href=(tag_path tag) = blog_tagtitle(tag)

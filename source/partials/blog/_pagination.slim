@@ -1,0 +1,8 @@
+- if paginate  &&  num_pages > 1
+  .blog_pagination.row
+    .columns.medium-4
+      = link_to t(:'blog.pagination.prev_page'), prev_page, class: "button secondary hallow expanded #{'disabled' unless prev_page}"
+    .columns.medium-4.text-center
+      p = t :'blog.pagination.page_number_of', page_number: page_number, num_pages: num_pages
+    .columns.medium-4
+      = link_to t(:'blog.pagination.next_page'), next_page, class: "button secondary hallow expanded #{'disabled' unless next_page}"

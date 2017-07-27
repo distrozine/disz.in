@@ -1,0 +1,24 @@
+.blog_article_layout {
+
+  .date-breadcrumbs {
+    text-align: center;
+
+    li {
+      display: inline-block;
+      float: none;
+    }
+  }
+
+  figure.cover.thumbnail {
+    @include breakpoint(medium) {
+      float: left;
+      max-width: 300px;
+      margin-right: $global-margin;
+    }
+  }
+
+  .article_body p {
+    text-align: justify;
+  }
+
+}

@@ -1,0 +1,11 @@
+- articles.each do |article|
+  a href=(article.url)
+    article.blog_article-row
+      .blog_article-row-img
+        - if blog_article_with_cover? article
+          = blog_article_image_tag article, 'cover.jpg', alt: 'Обложка поста'
+      .blog_article-row-content
+        h2.blog_article-row-content-header = article.title
+        time.blog_article-row-content-time datetime=("2008-02-14 20:00")  = blog_article_date article
+        .blog_article-row-content-description = article.summary
+        /p.article-row-content-author By Yeti

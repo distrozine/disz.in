@@ -1,9 +1,17 @@
 ru:
   layout:
     source_code: Исходный код
-  blog:
-    menu_item: Блог
-    title: Блог
   project:
     links: Ссылки
     history: История
+  blog:
+    pagination:
+      page_number_of: "Страница %{page_number} из %{num_pages}"
+      prev_page: "&laquo; Позже"
+      next_page: "Раньше &raquo;"
+    calendar:
+      title: "Архив"
+      item_title: "Архив блога за %{date}"
+    tags:
+      title: "Теги"
+      item_title: "Записи в блоге под тегом  &laquo;%{tag}&raquo;"

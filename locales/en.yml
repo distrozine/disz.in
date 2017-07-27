@@ -1,9 +1,17 @@
 en:
   layout:
     source_code: Source code
-  blog:
-    menu_item: Blog
-    title: Blog
   project:
     links: Links
     history: History
+  blog:
+    pagination:
+      page_number_of: "Page %{page_number} of %{num_pages}"
+      prev_page: "&laquo; Prev"
+      next_page: "Next &raquo;"
+    calendar:
+      title: "Archive"
+      item_title: "Blog archive for %{date}"
+    tags:
+      title: "Tags"
+      item_title: "Blog articles tagged &laquo;%{tag}&raquo;"

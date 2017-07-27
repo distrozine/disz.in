@@ -1,0 +1,9 @@
+---
+pageable: true
+per_page: 4
+layout: "blog_articles"
+---
+
+- locale_from_path!
+
+- current_page.data.title = t(:'blog.calendar.item_title', date: blog_calendar_item_date(page_type, year, month ||= nil, day ||= nil))

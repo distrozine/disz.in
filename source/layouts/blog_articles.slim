@@ -1,0 +1,15 @@
+= wrap_layout :layout do
+  article.blog_articles_layout
+    header.article_header.gradient
+      .row.column
+        h1 = current_page.data.title
+    .row
+      .columns.medium-8
+        - if page_articles.any?
+          = partial 'partials/blog/articles', locals: { articles: page_articles}
+          = partial_blog_pagination paginate, prev_page, next_page, num_pages, page_number
+        - else
+          .callout.secondary.text-center = t :'blog.no_articles_yet'
+      .columns.medium-4
+        = yield_content(:sidebar_prepend)
+        = partial 'partials/blog/sidebar'

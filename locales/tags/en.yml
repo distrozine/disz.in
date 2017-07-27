@@ -1,0 +1,7 @@
+en:
+  tags:
+    blog_articles:
+      testtag:
+        title: Test tag
+        info: This tag for testing blog tags
+
